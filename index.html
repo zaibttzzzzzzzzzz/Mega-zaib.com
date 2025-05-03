@@ -11,15 +11,7 @@
       background-color: #121212;
       color: white;
     }
-    .splash {
-      background-color: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
     .main-content {
-      display: none;
       padding: 16px;
     }
     .top-bar {
@@ -76,10 +68,6 @@
   </style>
 </head>
 <body>
-  <div class="splash" id="splash">
-    <img src="https://files.catbox.moe/5lenv1.jpg" alt="MegaZaib Logo" width="200">
-  </div>
-
   <div class="main-content" id="main">
     <div class="top-bar">
       <img src="https://files.catbox.moe/5lenv1.jpg" alt="MegaZaib Small Logo" width="50">
@@ -114,7 +102,7 @@
       <div class="product-card">
         <img src="https://files.catbox.moe/b19f7q.jpg">
         <div>Fashion Hoodie</div>
-        <div class="price">PKR 2,200</div>
+        <div class="price">PKR 8,200</div>
         <div>Description: Cozy hoodie for the winter season, comes in various colors.</div>
         <button class="shop-button" onclick="shopNow('Fashion Hoodie', 'PKR 2,200', 'https://files.catbox.moe/b19f7q.jpg')">Shop Now</button>
       </div>
@@ -172,13 +160,14 @@
   </div>
 
   <script>
-    setTimeout(() => {
-      document.getElementById('splash').style.display = 'none';
-      document.getElementById('main').style.display = 'block';
-    }, 2000);
+    // Remove the splash screen and directly show the main content
+    document.getElementById('main').style.display = 'block';
 
     function shopNow(name, price, imageUrl) {
       const message = `Hello, I want to buy this product:\n\nProduct: ${name}\nPrice: ${price}\nImage: ${imageUrl}`;
       const whatsappUrl = `https://wa.me/03301345700?text=${encodeURIComponent(message)}`;
       window.open(whatsappUrl, '_blank');
     }
+  </script>
+</body>
+                                                        </html>
