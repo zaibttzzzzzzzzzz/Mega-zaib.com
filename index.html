@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MegaZaib</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+    }
+    .splash {
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .main-content {
+      display: none;
+      padding: 16px;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 16px;
+    }
+    .search-box {
+      width: 100%;
+      margin: 10px 0;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .section-title {
+      margin: 20px 0 10px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 16px;
+    }
+    .product-card {
+      background-color: #1e1e1e;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .product-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .price {
+      color: gold;
+      margin: 5px 0;
+    }
+    .shop-button {
+      margin-top: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .shop-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="splash" id="splash">
+    <img src="https://files.catbox.moe/5lenv1.jpg" alt="MegaZaib Logo" width="200">
+  </div>
+
+  <div class="main-content" id="main">
+    <div class="top-bar">
+      <img src="https://files.catbox.moe/5lenv1.jpg" alt="MegaZaib Small Logo" width="50">
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Search products...">
+    </div>
+
+    <div class="section-title">For You</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ex1pr2.jpg">
+        <div>Stylish Jacket</div>
+        <div class="price">PKR 1,999</div>
+        <div>Description: A high-quality stylish jacket for all seasons. Available in multiple colors and sizes.</div>
+        <button class="shop-button" onclick="shopNow('Stylish Jacket', 'PKR 1,999', 'https://files.catbox.moe/ex1pr2.jpg')">Shop Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://files.catbox.moe/ojs6pt.jpg">
+        <div>Premium Sneakers</div>
+        <div class="price">PKR 3,499</div>
+        <div>Description: Trendy and comfortable sneakers for casual and sports activities.</div>
+        <button class="shop-button" onclick="shopNow('Premium Sneakers', 'PKR 3,499', 'https://files.catbox.moe/ojs6pt.jpg')">Shop Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://files.catbox.moe/0i6l24.jpg">
+        <div>Classic Watch</div>
+        <div class="price">PKR 2,500</div>
+        <div>Description: Elegant and timeless watch suitable for any occasion.</div>
+        <button class="shop-button" onclick="shopNow('Classic Watch', 'PKR 2,500', 'https://files.catbox.moe/0i6l24.jpg')">Shop Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://files.catbox.moe/b19f7q.jpg">
+        <div>Fashion Hoodie</div>
+        <div class="price">PKR 2,200</div>
+        <div>Description: Cozy hoodie for the winter season, comes in various colors.</div>
+        <button class="shop-button" onclick="shopNow('Fashion Hoodie', 'PKR 2,200', 'https://files.catbox.moe/b19f7q.jpg')">Shop Now</button>
+      </div>
+    </div>
+
+    <div class="section-title">Offers</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://files.catbox.moe/8s21oo.jpg">
+        <div>Offer Product 1</div>
+        <div class="price"><s>PKR 10,000</s> PKR 7,000</div>
+        <div>Description: Big discount on the latest tech gadgets.</div>
+        <button class="shop-button" onclick="shopNow('Offer Product 1', 'PKR 7,000', 'https://files.catbox.moe/8s21oo.jpg')">Shop Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://files.catbox.moe/1wv8l4.jpg">
+        <div>Offer Product 2</div>
+        <div class="price"><s>PKR 8,500</s> PKR 5,000</div>
+        <div>Description: Offer on premium home appliances, limited stock.</div>
+        <button class="shop-button" onclick="shopNow('Offer Product 2', 'PKR 5,000', 'https://files.catbox.moe/1wv8l4.jpg')">Shop Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://files.catbox.moe/94cjj9.jpg">
+        <div>Offer Product 3</div>
+        <div class="price"><s>PKR 7,000</s> PKR 4,500</div>
+        <div>Description: Get 35% off on selected fashion wear.</div>
+        <button class="shop-button" onclick="shopNow('Offer Product 3', 'PKR 4,500', 'https://files.catbox.moe/94cjj9.jpg')">Shop Now</button>
+      </div>
+    </div>
+
+    <div class="section-title">Local Products</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://files.catbox.moe/tk6etx.jpg">
+        <div>Local Product 1</div>
+        <div class="price">PKR 1,499</div>
+        <div>Description: Affordable local product perfect for daily use.</div>
+        <button class="shop-button" onclick="shopNow('Local Product 1', 'PKR 1,499', 'https://files.catbox.moe/tk6etx.jpg')">Shop Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://files.catbox.moe/8s21oo.jpg">
+        <div>Local Product 2</div>
+        <div class="price">PKR 3,200</div>
+        <div>Description: Premium quality local handicrafts.</div>
+        <button class="shop-button" onclick="shopNow('Local Product 2', 'PKR 3,200', 'https://files.catbox.moe/8s21oo.jpg')">Shop Now</button>
+      </div>
+      <div class="product-card">
+        <img src="https://files.catbox.moe/1wv8l4.jpg">
+        <div>Local Product 3</div>
+        <div class="price">PKR 2,000</div>
+        <div>Description: Local clothing with excellent fabric quality.</div>
+        <button class="shop-button" onclick="shopNow('Local Product 3', 'PKR 2,000', 'https://files.catbox.moe/1wv8l4.jpg')">Shop Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('splash').style.display = 'none';
+      document.getElementById('main').style.display = 'block';
+    }, 2000);
+
+    function shopNow(name, price, imageUrl) {
+      const message = `Hello, I want to buy this product:\n\nProduct: ${name}\nPrice: ${price}\nImage: ${imageUrl}`;
+      const whatsappUrl = `https://wa.me/03301345700?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank');
+    }
